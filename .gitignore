@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+*.class
+macro_terminal.db
+.env
+venv/
