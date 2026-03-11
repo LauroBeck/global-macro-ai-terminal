@@ -63,10 +63,12 @@ class TerminalDashboard:
         return table
 
     def get_macro_regime(self, model):
-        for method in ["detect_regime", "macro_regime_signal"]:
+        # We must check for 'market_regime' to match your model's code
+        for method in ["market_regime", "detect_regime", "macro_regime_signal"]:
             if hasattr(model, method):
                 res = getattr(model, method)()
-                if res: return str(res).upper()
+                if res: 
+                    return str(res).upper()
         return "UNKNOWN"
 
     def run(self):
